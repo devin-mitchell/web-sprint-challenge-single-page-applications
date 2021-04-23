@@ -61,7 +61,7 @@ export default function Home({ cardData }) {
                 </Link>         
             </BkdImg>
             <div class='home-cards'>
-                <DeliveryTitle>Food Delivery in gotham City</DeliveryTitle>
+                <DeliveryTitle>Food Delivery in Salt Lake City</DeliveryTitle>
                 <CardContainer>
                     {cardData.map((card, index) => {
                         return(          
