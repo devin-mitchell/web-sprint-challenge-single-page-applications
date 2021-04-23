@@ -43,22 +43,17 @@ const App = () => {
     const valueToUse = type === 'checkbox' ? checked : value;
 
     yup
-    .reach(schema, name) // get to this part of the schema
-    //we can then run validate using the value
-    .validate(value) // validate this value
+    .reach(schema, name) 
+    .validate(value) 
     .then(() => {
-      // happy path and clear the error
       setErrors({
         ...errors,
         [name]: "",
       });
     })
-    // if the validation is unsuccessful, we can set the error message to the message
-    // returned from yup (that we created in our schema)
     .catch((err) => {
       setErrors({
         ...errors,
-        // validation error from schema
         [name]: err.errors[0],
       });
     });

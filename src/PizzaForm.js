@@ -4,7 +4,7 @@ import NavBar from './NavBar';
 import Pizza from './Pizza.jpg';
 
 const Container = styled.div`
-    margin: 3% 25%;
+    margin: 3% 20%;
     background-color: #CDC698;
 
     img{
@@ -23,10 +23,22 @@ const Form = styled.form`
         width: 40%;
         height: 8%;
         margin: 0 30%;
-        background-color: green;
+        background-color: lightgreen;
         color: black;
         margin-bottom: 15%;
-       
+        border-radius: 10px;
+        transition: all 500ms ease-in;
+        
+        &:hover {
+            transform: scale(1.15);
+        }
+
+        &:disabled {
+            color: crimson;
+            background-color: white;
+            border: 2px solid crimson;
+            cursor: not-allowed;
+          }   
     }
 
 `
@@ -62,10 +74,9 @@ const OrderTitle = styled.h3`
     
 `
 
-
 export default function PizzaForm({ values, change, submit, disabled, orders, errors }) {
       
-      return (
+    return (
     <>
         <NavBar />
         <Container>
