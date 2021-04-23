@@ -37,6 +37,17 @@ const Button = styled.button`
         
     }
 `
+const DeliveryTitle = styled.h3`
+    margin: 0 4% 0;
+    font-size: 1.5rem;
+    border-bottom: solid;
+`
+
+const CardContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3%;
+`
 
 export default function Home({ cardData }) {
     
@@ -50,16 +61,14 @@ export default function Home({ cardData }) {
                 </Link>         
             </BkdImg>
             <div class='home-cards'>
-                <h3>Food Delivery in gotham City</h3>
-                <div>
+                <DeliveryTitle>Food Delivery in gotham City</DeliveryTitle>
+                <CardContainer>
                     {cardData.map((card, index) => {
-                        return(
-                            <div>
-                                <RestaurantCard card={card} key={index} />
-                            </div>
+                        return(          
+                            <RestaurantCard card={card} key={index} />                       
                         )
                     })}
-                </div>
+                </CardContainer>
             </div>
         </>
     )

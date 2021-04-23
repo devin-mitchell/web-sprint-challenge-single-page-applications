@@ -5,6 +5,7 @@ import Pizza from './Pizza.jpg';
 
 const Container = styled.div`
     margin: 3% 25%;
+    background-color: #CDC698;
 
     img{
         width:100%;
@@ -16,9 +17,50 @@ const Form = styled.form`
     flex-direction: column;
     justify-content: space-around;
     height: 80vh;
+    margin-left: 3%;
+
+    button{
+        width: 40%;
+        height: 8%;
+        margin: 0 30%;
+        background-color: green;
+        color: black;
+        margin-bottom: 15%;
+       
+    }
 
 `
+const Errors = styled.div`
+    color: red;
+    opacity: .7;
+    font-size: 1rem;
+    text-align: center;
+    margin: 3% 0;
+`
+const Order = styled.div`
+    display: flex;
+    font-size: 1.2rem;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    background-color: #504607  ;
+    padding: 5%;
+    margin-bottom: 2%;
+    
+    p{
+        text-align: center;
+    }
+`
 
+const Toppings = styled.div`
+    font-size: .7rem;
+`
+
+const OrderTitle = styled.h3`
+    text-align: center;
+    font-size: 1.5rem;
+    
+`
 
 
 export default function PizzaForm({ values, change, submit, disabled, orders, errors }) {
@@ -40,7 +82,7 @@ export default function PizzaForm({ values, change, submit, disabled, orders, er
                             onChange={change}
                             id='name-input'
                         />
-                        <div class='errors'>{errors.name}</div>
+                        <Errors class='errors'>{errors.name}</Errors>
                     </label>
                     <label class='label'>
                         <select 
@@ -55,7 +97,7 @@ export default function PizzaForm({ values, change, submit, disabled, orders, er
                                 <option value='large'>large</option>
                                 <option value='huge'>huge</option>
                         </select>
-                        <div class='errors'>{errors.size}</div>
+                        <Errors class='errors'>{errors.size}</Errors>
                     </label>
                     <label class='label'>Onions
                         <input
@@ -77,7 +119,7 @@ export default function PizzaForm({ values, change, submit, disabled, orders, er
                         <input
                             type='checkbox'
                             name='peppers'
-                            checked={values.pepers}
+                            checked={values.peppers}
                             onChange={change}
                         />
                     </label>
@@ -97,14 +139,25 @@ export default function PizzaForm({ values, change, submit, disabled, orders, er
                             onChange={change}
                             id='special-text'
                         />
-                        <div class='errors'>{errors.special}</div>
+                        <Errors class='errors'>{errors.special}</Errors>
                     </label>
                     <button disabled={disabled} id='order-button'>Place Order</button>
                     
                 </Form>
                 <div class='orders'>
-                    <div>{orders.name}</div>
-                    <div>{orders.toppings}</div>
+                    <OrderTitle>---- YOUR ORDERS ----</OrderTitle>
+                    {orders.map((order, index) => {
+                        return(
+                            <>
+                                <Order key={index}>
+                                <div >{order.name}</div>
+                                <div >{order.size}</div>
+                                <div >{order.toppings.map(topping => <Toppings>-{topping}</Toppings>)}</div>
+                                <div >"{order.special}"</div>              
+                                </Order>
+                            </>
+                        )
+                    })}
                 </div>
             </div>
         </Container>

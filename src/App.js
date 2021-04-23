@@ -71,28 +71,29 @@ const App = () => {
   const submit = evt => {
     evt.preventDefault();
     console.log(evt.data)
-    const newOrder = {
+    const newOrder = [{
         name: formValues.name.trim(),
         size: formValues.size,
-        // onions: formValues.onions,
-        // olives: formValues.olives,
-        // peppers: formValues.peppers,
-        // spinach: formValues.spinach,
         toppings: ["onions", "olives", "peppers", "spinach"].filter(
             (topping) => formValues[topping]
           ),
         special: formValues.special.trim(),
-        }
+        }]
     axios.post(`https://reqres.in/api/orders`, newOrder)
         .then(res => {
             console.log("new Order", res.data)
-            setOrders([...orders, res.data])
-
+            setOrders([...orders, res.data[0]])
+            setFormValues(initialFormValues)
+            console.log('ORDERS', orders)
         })
         .catch(err => {
             console.log(err)
         })
   }
+
+
+
+
 
   useEffect(() => {
     schema.isValid(formValues).then((valid) => {

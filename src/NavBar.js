@@ -9,6 +9,7 @@ const Nav = styled.nav`
     color: red;
     height: 20%;
     border: solid 1px gray;
+    
 
     h1{
         margin: 2% 3%;
