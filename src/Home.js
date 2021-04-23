@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Pizza from './Pizza.jpg'
-import { Link } from 'react-router-dom'
+import Pizza from './Pizza.jpg';
+import RestaurantCard from './RestaurantCard';
+import { Link } from 'react-router-dom';
+import NavBar from './NavBar'
 
 
 const BkdImg = styled.div`
@@ -11,6 +13,7 @@ const BkdImg = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 5%;
     
     h2 {
         font-size: 3rem;
@@ -35,9 +38,11 @@ const Button = styled.button`
     }
 `
 
-export default function Home() {
+export default function Home({ cardData }) {
+    
     return (
         <>
+            <NavBar />
             <BkdImg class='home-main'>
                 <h2>Your favorite food, delivered while coding</h2>
                 <Link to='/pizza'>
@@ -47,7 +52,13 @@ export default function Home() {
             <div class='home-cards'>
                 <h3>Food Delivery in gotham City</h3>
                 <div>
-                    {/* <HomeCards />*/}
+                    {cardData.map((card, index) => {
+                        return(
+                            <div>
+                                <RestaurantCard card={card} key={index} />
+                            </div>
+                        )
+                    })}
                 </div>
             </div>
         </>
