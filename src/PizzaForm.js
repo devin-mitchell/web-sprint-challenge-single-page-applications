@@ -1,8 +1,10 @@
 import React from 'react'
+import NavBar from './NavBar'
 
 export default function PizzaForm() {
     return (
         <div>
+            <NavBar />
             
         </div>
     )

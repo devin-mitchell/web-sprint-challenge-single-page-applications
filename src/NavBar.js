@@ -11,7 +11,8 @@ const Nav = styled.nav`
     border: solid 1px gray;
 
     h1{
-        margin-left: 3%;
+        margin: 2% 3%;
+        font-size: 2rem;
     }
 
 
@@ -27,7 +28,7 @@ const Div = styled.div`
         color: red;
         background-color: white;
         font-size: .9rem;
-        padding: 7% 50%;
+        padding: 10% 50%;
         border: 1px solid black;
 
         &:hover{
