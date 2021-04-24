@@ -17,6 +17,10 @@ const Card = styled.div`
         color: black;
         margin-bottom: 3%;
     }
+    img{
+        border: 5px solid black;
+        border-radius: 10%;
+    }
 `
 
 
@@ -25,6 +29,7 @@ export default function RestaurantCard({ card }) {
     return (
             <Card>
                 <h4>- {card.name} -</h4>
+                <img src={card.img} alt='restaurant' /> 
                 <p>{card.description}</p>               
                 <p>{card.time}</p>
                 <p>{card.Fee}</p>    

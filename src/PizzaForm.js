@@ -10,6 +10,7 @@ const Container = styled.div`
     img{
         width:100%;
         height: 10%;  
+        background-size: cover;
     }
 `
 const Form = styled.form`

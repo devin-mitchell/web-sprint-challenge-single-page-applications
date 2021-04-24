@@ -18,7 +18,7 @@ const BkdImg = styled.div`
     h2 {
         font-size: 3rem;
         width: 80%;
-        margin: 0 0 5%;
+        margin: 0 10% 5%;
     }
 `
 

@@ -5,15 +5,26 @@ import PizzaForm from './PizzaForm'
 import axios from 'axios'
 import schema from "./formSchema";
 import * as yup from 'yup'
+import bombay from './photos/BombayHouse.jpeg'
+import buds from './photos/Buds.jpeg'
+import este from './photos/Este.jpeg'
+import sweetGreen from './photos/SweetGreen.jpeg'
+import starbucks from './photos/Starbucks.jpeg'
+import mcdonalds from './photos/McDonalds.png' 
+
+
+
+
+
 
 
 const restaurantData = [
-  {img: './photos/BombayHouse', name: 'Bombay House', description: '$$ - Indian - Dining', time: '20 - 30 Min', Fee: '$4.99 Delivery Fee'},
-  {img: './photos/Buds', name: 'Buds', description: '$ - Vegan - Take Out', time: '10 - 30 Min', Fee: '$4.99 Delivery Fee'},
-  {img: './photos/Este', name: 'Este', description: '$$ - Pizza - Tasty', time: '30 - 45 Min', Fee: '$4.99 Delivery Fee'},
-  {img: './photos/SweetGreen', name: 'Sweet Green', description: '$$ - Healthy - Dining', time: '20 - 30 Min', Fee: '$4.99 Delivery Fee'},
-  {img: './photos/Starbucks', name: 'Starbucks', description: '$$ - Café - Coffee & Tea', time: '5 - 15 Min', Fee: '$4.99 Delivery Fee'},
-  {img: './photos/McDonalds', name: 'McDonalds', description: '$ - American - Fast Food', time: '10 - 30 Min', Fee: '$4.99 Delivery Fee'},
+  {img: bombay, name: 'Bombay House', description: '$$ - Indian - Dining', time: '20 - 30 Min', Fee: '$4.99 Delivery Fee'},
+  {img: buds, name: 'Buds', description: '$ - Vegan - Take Out', time: '10 - 30 Min', Fee: '$4.99 Delivery Fee'},
+  {img: este, name: 'Este', description: '$$ - Pizza - Tasty', time: '30 - 45 Min', Fee: '$4.99 Delivery Fee'},
+  {img: sweetGreen, name: 'Sweet Green', description: '$$ - Healthy - Dining', time: '20 - 30 Min', Fee: '$4.99 Delivery Fee'},
+  {img: starbucks, name: 'Starbucks', description: '$$ - Café - Coffee & Tea', time: '5 - 15 Min', Fee: '$4.99 Delivery Fee'},
+  {img: mcdonalds , name: 'McDonalds', description: '$ - American - Fast Food', time: '10 - 30 Min', Fee: '$4.99 Delivery Fee'},
 ]
 
 const initialFormValues = {
